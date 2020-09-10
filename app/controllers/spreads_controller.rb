@@ -1,9 +1,20 @@
 class SpreadsController < ApplicationController
-  def new
+  def show
+    @spread = Spread.find(params[:id])
+  end
 
+  def new
   end
 
   def create
-    render plain: params[:spread].inspect
+    @spread = Spread.new(spread_params)
+
+    @spread.save
+    redirect_to @spread
+  end
+
+  private
+  def spread_params
+    params.require(:spread).permit(:notes)
   end
 end
