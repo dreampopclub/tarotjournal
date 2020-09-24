@@ -15,6 +15,6 @@ class SpreadsController < ApplicationController
 
   private
   def spread_params
-    params.require(:spread).permit(:notes)
+    params.require(:spread).permit(:notes, :date)
   end
 end

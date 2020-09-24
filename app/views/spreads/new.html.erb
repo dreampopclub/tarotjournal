@@ -5,7 +5,13 @@
     <%= form.label :notes %><br>
     <%= form.text_area :notes %>
   </p>
-
+  <p>
+    <%= form.label :date %><br>
+    <%= date_field(:spread, :date) %>
+    <%=
+    #form.text_field :date
+    %>
+  </p>
   <p>
     <%= form.submit %>
   </p>
