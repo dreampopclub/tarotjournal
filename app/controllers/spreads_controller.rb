@@ -9,14 +9,14 @@ class SpreadsController < ApplicationController
   end
 
   def create
-    @spread = Spread.new(spread_params)
-
+    @user = current_user
+    @spread = @user.spreads.new(spread_params)
     @spread.save
     redirect_to @spread
   end
 
   private
   def spread_params
-    params.require(:spread).permit(:notes, :date)
+    params.require(:spread).permit(:notes, :date, :user_id)
   end
 end
