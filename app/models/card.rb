@@ -5,4 +5,8 @@ class Card
     @suit = suit
     @number = number
   end
+
+  def name
+    @number.to_s + " of " + @suit.to_s
+  end
 end

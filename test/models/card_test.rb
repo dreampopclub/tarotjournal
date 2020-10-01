@@ -6,4 +6,9 @@ class CardTest < ActiveSupport::TestCase
     assert_equal :wands, card.suit
     assert_equal 12, card.number
   end
+
+  test "#name" do
+    card = Card.new(:pentacles, 4)
+    assert_equal "4 of pentacles", card.name
+  end
 end
