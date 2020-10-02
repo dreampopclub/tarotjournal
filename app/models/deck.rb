@@ -1,7 +1,14 @@
 class Deck
-  attr_reader :cards
   def initialize
     @cards = {majors: build_majors, minors: build_minors}
+  end
+
+  def majors
+    @cards[:majors]
+  end
+
+  def minors
+    @cards[:minors]
   end
 
   private
