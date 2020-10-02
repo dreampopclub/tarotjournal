@@ -1,12 +1,19 @@
 class Card
-  attr_reader :suit, :number
+  attr_reader :number, :suit
 
-  def initialize(suit, number)
-    @suit = suit
+  def initialize(number, suit, name)
     @number = number
+    @suit = suit
+    @name = name
   end
 
   def name
+    @name ? @name : build_minor_name
+  end
+
+  private
+
+  def build_minor_name
     name = case @number
            when 1
              "Ace"

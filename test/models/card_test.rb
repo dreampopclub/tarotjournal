@@ -1,20 +1,16 @@
 require 'test_helper'
 
 class CardTest < ActiveSupport::TestCase
-  test "the Card object is instantiated properly" do
-    card = Card.new(:wands, 12)
-    assert_equal :wands, card.suit
-    assert_equal 12, card.number
-  end
-
   test "#name" do
-    four_of_pentacles = Card.new(:pentacles, 4)
-    ace_of_wands = Card.new(:wands, 1)
-    page_of_cups = Card.new(:cups, 11)
-    knight_of_swords = Card.new(:swords, 12)
-    queen_of_wands = Card.new(:wands, 13)
-    king_of_cups = Card.new(:cups, 14)
+    the_chariot = Card.new(7, nil, "The Chariot")
+    four_of_pentacles = Card.new(4, :pentacles, nil)
+    ace_of_wands = Card.new(1, :wands, nil)
+    page_of_cups = Card.new(11, :cups, nil)
+    knight_of_swords = Card.new(12, :swords, nil)
+    queen_of_wands = Card.new(13, :wands, nil)
+    king_of_cups = Card.new(14, :cups, nil)
 
+    assert_equal "The Chariot", the_chariot.name
     assert_equal "4 of Pentacles", four_of_pentacles.name
     assert_equal "Ace of Wands",  ace_of_wands.name
     assert_equal "Page of Cups", page_of_cups.name

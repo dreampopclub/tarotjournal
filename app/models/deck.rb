@@ -13,7 +13,7 @@ class Deck
  def make_wands
    wands = []
    for i in 1..14
-     wands << Card.new(:wands, i)
+     wands << Card.new(i, :wands, nil)
    end
    wands
  end
@@ -21,7 +21,7 @@ class Deck
  def make_cups
    cups = []
    for i in 1..14
-     cups << Card.new(:cups, i)
+     cups << Card.new(i, :cups, nil)
    end
    cups
  end
@@ -29,7 +29,7 @@ class Deck
  def make_swords
    swords = []
    for i in 1..14
-     swords << Card.new(:swords, i)
+     swords << Card.new(i, :swords, nil)
    end
    swords
  end
@@ -37,7 +37,7 @@ class Deck
  def make_pentacles
    pentacles = []
    for i in 1..14
-     pentacles << Card.new(:pentacles, i)
+     pentacles << Card.new(i, :pentacles, nil)
    end
    pentacles
  end
