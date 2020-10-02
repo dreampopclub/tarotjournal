@@ -1,45 +1,33 @@
 class Deck
   attr_reader :cards
   def initialize
-    @cards = build_deck
+    @cards = {majors: build_majors, minors: build_minors}
   end
 
   private
 
-  def build_deck
-    make_wands + make_cups + make_swords + make_pentacles
+  def build_majors
+    major_arcana =
+      ["The Fool", "The Magician", "The High Priestess", "The Empress",
+       "The Emperor", "The Hierophant", "The Lovers", "The Chariot",
+       "Strength", "The Hermit", "Wheel of Fortune", "Justice", "The Hanged Man",
+       "Death", "Temperance", "The Devil", "The Tower", "The Star", "The Moon",
+       "The Sun", "Judgement", "The World"]
+
+    major_cards = []
+    major_arcana.each_with_index { |val, i| major_cards << Card.new(i, nil, val)}
+    major_cards
   end
 
-  def make_wands
-    wands = []
-    for i in 1..14
-      wands << Card.new(i, :wands, nil)
+  def build_minors
+    minors_suits = [:wands, :cups, :swords, :pentacles]
+    minor_cards = []
+
+    minors_suits.each do |suit|
+      for i in 1..14
+        minor_cards << Card.new(i, suit, nil)
+      end
     end
-    wands
+    minor_cards
   end
-
-  def make_cups
-    cups = []
-    for i in 1..14
-      cups << Card.new(i, :cups, nil)
-    end
-    cups
-  end
-
-  def make_swords
-    swords = []
-    for i in 1..14
-      swords << Card.new(i, :swords, nil)
-    end
-    swords
-  end
-
-  def make_pentacles
-    pentacles = []
-    for i in 1..14
-      pentacles << Card.new(i, :pentacles, nil)
-    end
-    pentacles
-  end
-
 end
