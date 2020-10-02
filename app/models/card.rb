@@ -7,6 +7,20 @@ class Card
   end
 
   def name
-    @number.to_s + " of " + @suit.to_s
+    name = case @number
+           when 1
+             "Ace"
+           when 11
+             "Page"
+           when 12
+             "Knight"
+           when 13
+             "Queen"
+           when 14
+             "King"
+           else
+             @number.to_s
+           end
+    name + " of " + @suit.to_s.capitalize
   end
 end
