@@ -13,7 +13,8 @@
     %>
   </p>
   <p>
-    <%= select_tag(:card, options_for_select(deck_select_options(@deck.cards))) %>
+    <%= select_tag(:card, options_for_select(deck_select_options(@deck.minors))) %>
+    <%= select_tag(:card, options_for_select(deck_select_options(@deck.majors))) %>
   </p>
   <p>
     <%= form.submit %>
