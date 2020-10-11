@@ -6,7 +6,7 @@ class SpreadsController < ApplicationController
   end
 
   def new
-    @deck = Deck.new
+    @deck = Deck.get('rider_waite')
   end
 
   def create
