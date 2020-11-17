@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_25_131332) do
+ActiveRecord::Schema.define(version: 2020_11_17_170017) do
 
   create_table "spreads", force: :cascade do |t|
     t.text "notes"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_131332) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
     t.integer "user_id"
+    t.text "cards"
     t.index ["user_id"], name: "index_spreads_on_user_id"
   end
 
