@@ -1,4 +1,4 @@
-DECKLIST = [RiderWaite, Thoth]
+DECKLIST = [RiderWaite]
 Rails.application.configure do
   config.after_initialize do
     DECKLIST.each do |deck|
