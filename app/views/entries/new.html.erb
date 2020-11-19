@@ -1,0 +1,22 @@
+<h1>New Entry</h1>
+
+<%= form_with scope: :entry, url: entries_path, local: true do |form| %>
+  <p>
+    <%= form.label :notes %><br>
+    <%= form.text_area :notes %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= date_field(:entry, :date) %>
+
+  </p>
+  <p>
+    <%= select_tag(:minor_card, options_for_select(@deck.cards.filter_map.with_index { |card, index| !card.major && [card.name, index]})) %>
+    <%= select_tag(:major_card, options_for_select(@deck.cards.filter_map.with_index { |card, index| card.major && [card.name, index]})) %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', entries_path %>
