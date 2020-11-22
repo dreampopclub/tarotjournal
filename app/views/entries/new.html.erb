@@ -11,8 +11,9 @@
 
   </p>
   <p>
-    <% DECKS.each do |name, cards| %>
-      <%= select_tag(:cards, options_for_select(cards.map.with_index { |card, index| [card.name, index]})) %>
+    <% DECKS.each do |deck| %>
+
+      <%= select_tag(:cards, options_for_select(deck.cards.map.with_index { |card, index| [card.name, index]})) %>
         <%=
         #select_tag(:major_card, options_for_select(DECKS['rider_waite'].filter_map.with_index { |card, index| card.major && [card.name, index]}))
         %>
