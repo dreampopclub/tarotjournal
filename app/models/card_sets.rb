@@ -1,6 +1,9 @@
-module Decks::RiderWaite
+module CardSets
   extend self
-  def build
+
+  # return card set for decks available to the application
+
+  def rider_waite
     majors_count = 22
     minors_count_per_suit = 14
 

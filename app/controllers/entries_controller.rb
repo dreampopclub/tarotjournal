@@ -16,7 +16,6 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @deck = DECKS["rider_waite"]
 #    @entry = Entry.new
   end
 
